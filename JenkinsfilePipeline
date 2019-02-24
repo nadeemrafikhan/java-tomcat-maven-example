@@ -1,7 +1,8 @@
 pipeline {
     agent any
     stages {
-    stage ('Build Servlet Project') {
+    
+	stage ('Build Servlet Project') {
             steps {
                 /*For windows machine */
                bat  'mvn clean package'
@@ -18,7 +19,8 @@ pipeline {
                 }
             }
 			}
-        stage ('Build Servlet Project') {
+    
+    stage ('deploy Servlet Project') {
         steps {
 sshagent(['tomcat-sshagent']) {
     sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@172.31.23.92:/root/tomcat8/webapps'
@@ -27,4 +29,3 @@ sshagent(['tomcat-sshagent']) {
 }
 }
 }
-
