@@ -1,3 +1,12 @@
+pipeline {
+    agent any
+    stages {
+        stage ('Build Servlet Project') {
+        steps {
 sshagent(['tomcat-sshagent']) {
     sh 'ssh -o StrictHostKeyChecking=no target/*.war ec2-user@172.31.23.92:/root/tomcat8/webapps'
+}
+}
+}
+}
 }
