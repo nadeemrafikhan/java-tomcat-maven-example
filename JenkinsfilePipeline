@@ -17,6 +17,7 @@ pipeline {
                     archiveArtifacts artifacts : '**/*.war'
                 }
             }
+			}
         stage ('Build Servlet Project') {
         steps {
 sshagent(['tomcat-sshagent']) {
@@ -26,4 +27,4 @@ sshagent(['tomcat-sshagent']) {
 }
 }
 }
-}
+
