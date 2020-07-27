@@ -15,7 +15,6 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-<!-- new section in xml -->  
   <build>
     <finalName>java-tomcat-maven-example</finalName>
     <plugins>
